@@ -1,0 +1,798 @@
+/* =========================================
+   LEAVE BALANCE — DARK EXECUTIVE THEME
+========================================= */
+
+.leave-balance-page {
+  --bg: #0b1020;
+  --panel: #131b2e;
+  --panel-light: #18243a;
+  --border: #293750;
+  --text: #f1f5ff;
+  --muted: #98a6bf;
+  --blue: #58a6ff;
+  --blue-dark: #1769e0;
+
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+}
+
+.leave-balance-page *,
+.leave-balance-page *::before,
+.leave-balance-page *::after {
+  box-sizing: border-box;
+}
+
+/* SIDEBAR */
+
+.leave-balance-page .sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 10;
+  width: 250px;
+  height: 100vh;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  background: #10182a;
+  border-right: 1px solid var(--border);
+}
+
+.leave-balance-page .dashboard-logo {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 5px 8px 30px;
+  color: #f5f7ff;
+  font-size: 19px;
+  font-weight: 750;
+}
+
+.leave-balance-page .dashboard-logo-icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #1769e0, #58a6ff);
+  color: #fff;
+  font-weight: 800;
+}
+
+.leave-balance-page .balance-nav-label {
+  margin: 0 0 12px;
+  padding: 0 10px;
+  color: #8796b0;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.leave-balance-page .sidebar nav {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 7px;
+  width: 100%;
+}
+
+.leave-balance-page .nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  width: 100%;
+  min-height: 44px;
+  padding: 12px 13px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  background: transparent;
+  color: #b3bfd3;
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 1.4;
+  text-align: left;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.leave-balance-page .nav-item > span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  min-width: 20px;
+  color: #91a2bf;
+  font-size: 16px;
+}
+
+.leave-balance-page .nav-item:hover {
+  background: #1a2740;
+  color: #fff;
+}
+
+.leave-balance-page .nav-item.active {
+  background: linear-gradient(100deg, #25365a, #222d49);
+  border-color: #39496b;
+  box-shadow: inset 3px 0 0 #58a6ff;
+  color: #fff;
+}
+
+.leave-balance-page .nav-item.active > span {
+  color: #7dc1ff;
+}
+
+/* SIDEBAR USER AND LOGOUT */
+
+.leave-balance-page .balance-sidebar-footer {
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+.leave-balance-page .balance-sidebar-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 7px;
+  margin-bottom: 10px;
+  border-top: 1px solid var(--border);
+}
+
+.leave-balance-page .balance-mini-avatar {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #263957;
+  color: #b9d5ff;
+  font-weight: 800;
+}
+
+.leave-balance-page .balance-sidebar-user strong,
+.leave-balance-page .balance-sidebar-user span {
+  display: block;
+  max-width: 145px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.leave-balance-page .balance-sidebar-user strong {
+  color: #f0f4ff;
+  font-size: 12px;
+}
+
+.leave-balance-page .balance-sidebar-user span {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 11px;
+  text-transform: capitalize;
+}
+
+.leave-balance-page .logout-button {
+  width: 100%;
+  min-height: 42px;
+  padding: 11px 14px;
+  border: 1px solid #34415b;
+  border-radius: 9px;
+  background: #18243a;
+  color: #e1e8f6;
+  font-family: inherit;
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.leave-balance-page .logout-button:hover {
+  background: #26334d;
+}
+
+/* MAIN CONTENT */
+
+.leave-balance-page .leave-balance-main {
+  width: calc(100% - 250px);
+  min-width: 0;
+  min-height: 100vh;
+  margin-left: 250px;
+  padding: 34px 36px 24px;
+  background:
+    radial-gradient(
+      ellipse at 75% 0%,
+      rgba(57, 91, 160, 0.13),
+      transparent 42%
+    ),
+    var(--bg);
+}
+
+/* HEADER */
+
+.leave-balance-page .balance-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  margin-bottom: 28px;
+}
+
+.leave-balance-page .balance-small-title {
+  margin: 0 0 9px;
+  color: #91a5ff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+}
+
+.leave-balance-page .balance-header h1 {
+  margin: 0;
+  color: #f5f7ff;
+  font-size: clamp(26px, 2.5vw, 34px);
+  font-weight: 750;
+  line-height: 1.25;
+}
+
+.leave-balance-page .balance-header > div:first-child > p:last-child {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.leave-balance-page .balance-header-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #131b2e;
+}
+
+.leave-balance-page .balance-header-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: rgba(88, 166, 255, 0.14);
+  color: #80bdff;
+  font-size: 21px;
+}
+
+.leave-balance-page .balance-header-badge strong,
+.leave-balance-page .balance-header-badge span {
+  display: block;
+}
+
+.leave-balance-page .balance-header-badge strong {
+  color: #f1f5ff;
+  font-size: 12px;
+}
+
+.leave-balance-page .balance-header-badge span {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+/* SUMMARY CARDS */
+
+.leave-balance-page .balance-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.leave-balance-page .balance-summary-card {
+  min-width: 0;
+  padding: 21px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: linear-gradient(145deg, #172943, #131b2e);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+}
+
+.leave-balance-page .balance-summary-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 19px;
+}
+
+.leave-balance-page .balance-summary-top > span {
+  color: #a3b0c7;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+}
+
+.leave-balance-page .balance-summary-icon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.leave-balance-page .icon-blue {
+  background: rgba(88, 166, 255, 0.15);
+  color: #8dc4ff;
+}
+
+.leave-balance-page .icon-amber {
+  background: rgba(245, 183, 75, 0.13);
+  color: #f6c56e;
+}
+
+.leave-balance-page .icon-green {
+  background: rgba(60, 201, 137, 0.13);
+  color: #5de0a5;
+}
+
+.leave-balance-page .balance-summary-card > strong {
+  display: block;
+  color: #f6f8ff;
+  font-size: 32px;
+  font-weight: 750;
+  line-height: 1.2;
+}
+
+.leave-balance-page .balance-summary-card > p {
+  margin: 8px 0 0;
+  color: #94a2bb;
+  font-size: 12px;
+}
+
+/* OVERALL USAGE PANEL */
+
+.leave-balance-page .balance-usage-card {
+  margin-bottom: 28px;
+  padding: 23px 24px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: linear-gradient(145deg, #16253c, #111a2c);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+}
+
+.leave-balance-page .balance-usage-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 21px;
+}
+
+.leave-balance-page .balance-usage-heading h2 {
+  margin: 0;
+  color: #f1f5ff;
+  font-size: 17px;
+}
+
+.leave-balance-page .balance-usage-heading p {
+  margin: 7px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.leave-balance-page .balance-usage-heading > strong {
+  flex-shrink: 0;
+  padding: 8px 12px;
+  border: 1px solid #354668;
+  border-radius: 20px;
+  background: #1b2942;
+  color: #9dc9ff;
+  font-size: 12px;
+}
+
+/* PROGRESS BAR */
+
+.leave-balance-page .balance-progress-track {
+  width: 100%;
+  height: 9px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #27344b;
+}
+
+.leave-balance-page .balance-progress-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #1769e0, #58a6ff);
+  transition: width 0.4s ease;
+}
+
+.leave-balance-page .balance-usage-footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+  color: #a0aec4;
+  font-size: 11px;
+}
+
+/* BREAKDOWN SECTION */
+
+.leave-balance-page .balance-details-section {
+  margin-top: 5px;
+}
+
+.leave-balance-page .balance-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.leave-balance-page .balance-section-heading h2 {
+  margin: 0;
+  color: #f1f5ff;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.leave-balance-page .balance-section-heading p {
+  margin: 7px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.leave-balance-page .balance-count-pill {
+  flex-shrink: 0;
+  padding: 7px 11px;
+  border: 1px solid #354668;
+  border-radius: 20px;
+  background: #1b2942;
+  color: #c5d1e8;
+  font-size: 11px;
+  font-weight: 650;
+}
+
+/* LEAVE TYPE CARDS */
+
+.leave-balance-page .balance-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px;
+}
+
+.leave-balance-page .balance-card {
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: linear-gradient(145deg, #172943, #131b2e);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.leave-balance-page .balance-card:hover {
+  border-color: #405579;
+  transform: translateY(-2px);
+}
+
+.leave-balance-page .balance-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 19px;
+}
+
+.leave-balance-page .balance-card-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #354668;
+  border-radius: 11px;
+  background: rgba(88, 166, 255, 0.12);
+  color: #8dc4ff;
+  font-size: 20px;
+}
+
+.leave-balance-page .balance-year {
+  padding: 6px 10px;
+  border: 1px solid #35415a;
+  border-radius: 20px;
+  background: #18243a;
+  color: #aab8d0;
+  font-size: 10px;
+  font-weight: 650;
+}
+
+.leave-balance-page .balance-card h3 {
+  margin: 0;
+  color: #f1f5ff;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.leave-balance-page .balance-description {
+  margin: 7px 0 20px;
+  color: #94a2bb;
+  font-size: 12px;
+}
+
+.leave-balance-page .balance-card-remaining {
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+  margin-bottom: 22px;
+}
+
+.leave-balance-page .balance-card-remaining strong {
+  color: #f5f7ff;
+  font-size: 34px;
+  font-weight: 750;
+}
+
+.leave-balance-page .balance-card-remaining span {
+  color: #9aa9c0;
+  font-size: 12px;
+}
+
+.leave-balance-page .balance-numbers {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 19px;
+}
+
+.leave-balance-page .balance-numbers > div {
+  min-width: 0;
+  padding: 12px 10px;
+  border: 1px solid #293750;
+  border-radius: 9px;
+  background: rgba(11, 16, 32, 0.5);
+}
+
+.leave-balance-page .balance-numbers span {
+  display: block;
+  margin-bottom: 7px;
+  color: #91a0b9;
+  font-size: 10px;
+}
+
+.leave-balance-page .balance-numbers strong {
+  display: block;
+  color: #eaf0ff;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.leave-balance-page .balance-progress-label {
+  margin: 10px 0 0;
+  color: #98a6bf;
+  font-size: 11px;
+}
+
+/* LOADING, EMPTY AND ERROR STATES */
+
+.leave-balance-page .balance-message {
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 22px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: linear-gradient(145deg, #16253c, #111a2c);
+  text-align: center;
+}
+
+.leave-balance-page .balance-message h3 {
+  margin: 15px 0 7px;
+  color: #f1f5ff;
+  font-size: 18px;
+}
+
+.leave-balance-page .balance-message p {
+  max-width: 430px;
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.leave-balance-page .balance-message-icon {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #354668;
+  border-radius: 14px;
+  background: #202d48;
+  color: #8dc4ff;
+  font-size: 23px;
+  font-weight: 800;
+}
+
+.leave-balance-page .balance-primary-button {
+  min-height: 40px;
+  padding: 10px 17px;
+  border: 1px solid #4388ed;
+  border-radius: 9px;
+  background: linear-gradient(135deg, #1769e0, #428cf4);
+  color: #fff;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.leave-balance-page .balance-primary-button:hover {
+  filter: brightness(1.1);
+}
+
+.leave-balance-page .error-message .balance-message-icon {
+  border-color: rgba(255, 113, 132, 0.25);
+  background: rgba(220, 65, 88, 0.12);
+  color: #ff8d9d;
+}
+
+.leave-balance-page .balance-spinner {
+  width: 37px;
+  height: 37px;
+  border: 3px solid #34415b;
+  border-top-color: #58a6ff;
+  border-radius: 50%;
+  animation: balance-spin 0.8s linear infinite;
+}
+
+@keyframes balance-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* FOOTER */
+
+.leave-balance-page .balance-page-footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+  padding: 18px 3px 0;
+  border-top: 1px solid #222e43;
+  color: #7887a1;
+  font-size: 10px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1150px) {
+  .leave-balance-page .leave-balance-main {
+    padding: 28px 24px;
+  }
+
+  .leave-balance-page .balance-summary-grid {
+    gap: 12px;
+  }
+
+  .leave-balance-page .balance-summary-card {
+    padding: 17px;
+  }
+}
+
+@media (max-width: 900px) {
+  .leave-balance-page .sidebar {
+    width: 215px;
+  }
+
+  .leave-balance-page .leave-balance-main {
+    width: calc(100% - 215px);
+    margin-left: 215px;
+    padding: 24px 18px;
+  }
+
+  .leave-balance-page .balance-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .leave-balance-page .balance-header-badge {
+    display: none;
+  }
+}
+
+@media (max-width: 650px) {
+  .leave-balance-page {
+    display: block;
+  }
+
+  .leave-balance-page .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    padding: 14px;
+  }
+
+  .leave-balance-page .dashboard-logo {
+    padding-bottom: 17px;
+  }
+
+  .leave-balance-page .sidebar nav {
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 7px;
+    padding-bottom: 7px;
+  }
+
+  .leave-balance-page .nav-item {
+    width: auto;
+    min-height: 39px;
+    padding: 9px 11px;
+  }
+
+  .leave-balance-page .balance-sidebar-footer {
+    margin-top: 12px;
+    padding-top: 8px;
+  }
+
+  .leave-balance-page .balance-sidebar-user {
+    display: none;
+  }
+
+  .leave-balance-page .leave-balance-main {
+    width: 100%;
+    margin-left: 0;
+    padding: 23px 14px;
+  }
+
+  .leave-balance-page .balance-header {
+    align-items: flex-start;
+  }
+
+  .leave-balance-page .balance-summary-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .leave-balance-page .balance-usage-card {
+    padding: 18px 15px;
+  }
+
+  .leave-balance-page .balance-usage-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .leave-balance-page .balance-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .leave-balance-page .balance-card {
+    padding: 17px;
+  }
+
+  .leave-balance-page .balance-page-footer {
+    flex-direction: column;
+  }
+}
